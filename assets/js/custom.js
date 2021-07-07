@@ -202,34 +202,54 @@ jQuery('.kitas').click(function(){
 
 })
 
+
+
 jQuery( ".pasirinkimasjq" ).change(function() {
-  var el = document.getElementById('pasirinkimas');
+  var el = jQuery(this);
 
-  var tekstas = '';
+  var tekstasjq = '';
 
-  switch(el.value) {
+  switch(el.val()) {
 
       case 'volvo':
-          tekstas = 'Volvo geriausias.';
+          tekstasjq = 'Volvo geriausias.';
           break;
 
       case 'saab':
-          tekstas = 'Keista mašina...';
+          tekstasjq = 'Keista mašina...';
           break;
 
       case 'opel':
-          tekstas = 'Lauželis';
+          tekstasjq = 'Lauželis';
           break;
 
       case 'audi':
-          tekstas = 'Kažkas tokio!';
+          tekstasjq = 'Kažkas tokio!';
           break;
 
       default:
-          tekstas = 'Velniop tą mašiną';
+          tekstasjq = 'Velniop tą mašiną';
 
   }
-  console.log(pasirinkimas)
-  alert( tekstas );
+  //console.log(tekstasjq);
+  alert(tekstasjq)
+
+  jQuery('.responseMessage').html(tekstasjq);
+  //rodys tik vieną var reikšmę
+ //jQuery('.responseMessage').append(tekstasjq);
+ //rodys visas parinktas reikšmes, rikiuojant naujausią galę
+  //jQuery('.responseMessage').prepend(tekstasjq);
+  //rodys visas parinktas reikšmes, rikiuojant naujausią priekyje
+  
+});
+
+jQuery(document).ready(function() {
+  jQuery(duomenys).each(function(indeksas, reiksme){
+    jQuery(reiksme).each(function(indeksas, reiksme) {
+      console.log(reiksme['adresas']);
+    });
+    ;
+  });
+  
 });
 

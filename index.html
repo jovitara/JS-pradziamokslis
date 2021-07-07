@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Testine Javascript aplikacija</title>
     <link rel="stylesheet" href="assets/css/custom.css" />
-</head>
-<body>
+  </head>
+  <body>
     <div id="messages"></div>
     <input type="number" id="kiekis" value="1" />
     <button id="kvietejas">Į krepšelį</button>
@@ -28,41 +28,50 @@
       <tbody id="lentelesVidus"></tbody>
     </table>
 
-    <h1> SELECT CARS</h1>
-      
+    <h1>SELECT CARS</h1>
+
     <select id="pasirinkimas">
       <option value="volvo">Volvo</option>
       <option value="saab">Saab</option>
       <option value="opel">Opel</option>
       <option value="audi">Audi</option>
       <option value="dviratis">Dviratis</option>
-      </select>
-  
-      <br><br>
-  
-      <button id="submit">Submit</button>
-      <button class="kitas" id="kitas">NAUJAS MYGTUKAS</button>
-   
-    
+    </select>
 
-      <h1> SELECT CARS JQ</h1>
-      
-    <select id="pasirinkimasjq">
+    <br /><br />
+
+    <button id="submit">Submit</button>
+    <button class="kitas" id="kitas">NAUJAS MYGTUKAS</button>
+
+    <h1>SELECT CARS JQ</h1>
+
+    <select class="pasirinkimasjq" id="pasirinkimasjq">
       <option value="volvo">Volvo</option>
       <option value="saab">Saab</option>
       <option value="opel">Opel</option>
       <option value="audi">Audi</option>
       <option value="dviratis">Dviratis</option>
-      </select>
-  
-      <br><br>
-  
-      <button class="submitjq"  id="submit">Submit</button>
-      
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </select>
+
+    <br /><br />
+    <div class="responseMessage"></div>
+    <br /><br />
+    <button class="submitjq" id="submitjq">Submit</button>
+
+
+    <h1>LENTELĖ SU EACH</h1>
+    <table class="lentele" id="lentele">
+      <thead>
+        <th>Miestas</th>
+        <th>Adresas</th>
+        <th>Data</th>
+        <th>Kiekis</th>
+      </thead>
+      <tbody class="lentelesvidus" id="lentelesVidus"></tbody>
+    </table>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/custom.js"></script>
     <script type="text/javascript" src="assets/js/newfile.js"></script>
-    
-</body>
+  </body>
 </html>
-

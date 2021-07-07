@@ -201,3 +201,35 @@ jQuery('.kitas').click(function(){
 });
 
 })
+
+jQuery( ".pasirinkimasjq" ).change(function() {
+  var el = document.getElementById('pasirinkimas');
+
+  var tekstas = '';
+
+  switch(el.value) {
+
+      case 'volvo':
+          tekstas = 'Volvo geriausias.';
+          break;
+
+      case 'saab':
+          tekstas = 'Keista mašina...';
+          break;
+
+      case 'opel':
+          tekstas = 'Lauželis';
+          break;
+
+      case 'audi':
+          tekstas = 'Kažkas tokio!';
+          break;
+
+      default:
+          tekstas = 'Velniop tą mašiną';
+
+  }
+  console.log(pasirinkimas)
+  alert( tekstas );
+});
+

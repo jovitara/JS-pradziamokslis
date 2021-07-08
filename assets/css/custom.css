@@ -29,3 +29,49 @@
 .lentele td:last-child {
     border-right: none;
 }
+.lentelejq {
+    width: 100%;
+    border: 1px solid #ccc;
+    margin-top: 2rem;
+    border-collapse: collapse;
+    display: none;
+}
+
+.lentelejq.show {
+    display: table;
+}
+
+.lentelejq th {
+    font-weight: 600;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    text-align: left;
+    padding: 0.5rem;
+}
+
+.lentelejq td {
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    text-align: left;
+    padding: 0.5rem;
+}
+
+.lentelejq th:last-child,
+.lentelejq td:last-child {
+    border-right: none;
+}
+.newlentele {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .newlentele td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }

@@ -101,6 +101,12 @@ const duomenys = [
   },
 ];
 
+duomenys[0]['miestas'] = 'Kazlų Rūda';
+duomenys[1]['miestas'] = 'Ariogala';
+duomenys[2]['miestas'] = 'Marijampolė';
+
+console.log(duomenys)
+
 let html = "";
 let ending = "";
 
@@ -202,6 +208,18 @@ jQuery('.kitas').click(function(){
 
 })
 
+//Lentele su EACH
+
+jQuery(document).ready(function(){
+  
+  jQuery('.kitas').addClass('klase');
+  jQuery('#kitas').removeClass('klase');
+  jQuery('.kitas').click(function(){
+      alert('Naujas paspaudiams');
+  });
+  
+  })
+
 
 
 jQuery( ".pasirinkimasjq" ).change(function() {
@@ -243,6 +261,8 @@ jQuery( ".pasirinkimasjq" ).change(function() {
   
 });
 
+
+
 jQuery(document).ready(function() {
   jQuery(duomenys).each(function(indeksas, reiksme){
     jQuery(reiksme).each(function(indeksas, reiksme) {
@@ -253,3 +273,50 @@ jQuery(document).ready(function() {
   
 });
 
+//lentele su jq
+
+const duomenysnew = [
+  {
+    klientas: "Adomavičiaus įmonė",
+    kodas: "1000",
+    data: "2021-07-01",
+    produktas: "Kompiuteris",
+    kaina: "1499",
+    papildoma_informacija: "",
+  },
+  {
+    klientas: "UAB KESKO SENUKAI",
+    kodas: "1001",
+    data: "2021-07-02",
+    produktas: "Televizorius",
+    kaina: "1299",
+    papildoma_informacija: "Reikalingas pristatymas",
+  },
+  {
+    klientas: "UAB SIMPLEA",
+    kodas: "1002",
+    data: "2021-07-03",
+    produktas: "Planšetė",
+    kaina: "499",
+    papildoma_informacija: "",
+  },
+  {
+    klientas: "UAB 5 kontinentai",
+    kodas: "1003",
+    data: "2021-07-04",
+    produktas: "Telefonas",
+    kaina: "700",
+    papildoma_informacija: "",
+  },
+]; 
+
+var tbody = $("#newlentele tbody"),
+reiksmes = ["klientas", "kodas", "data", "produktas", "kaina", "papildoma_informacija"]
+jQuery(duomenysnew).each(function(indeksas, reiksme){
+  var tr = jQuery("<tr>");
+  jQuery(reiksmes).each(function(indeksas, kintamas){
+    jQuery("<td>").html(reiksme[kintamas]).appendTo(tr);
+  });
+  tbody.append(tr);
+  });
+});

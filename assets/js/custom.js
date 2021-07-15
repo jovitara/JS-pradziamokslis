@@ -101,11 +101,11 @@ const duomenys = [
   },
 ];
 
-duomenys[0]['miestas'] = 'Kazlų Rūda';
-duomenys[1]['miestas'] = 'Ariogala';
-duomenys[2]['miestas'] = 'Marijampolė';
+duomenys[0]["miestas"] = "Kazlų Rūda";
+duomenys[1]["miestas"] = "Ariogala";
+duomenys[2]["miestas"] = "Marijampolė";
 
-console.log(duomenys)
+console.log(duomenys);
 
 let html = "";
 let ending = "";
@@ -165,158 +165,195 @@ document.getElementById("skaiciuoti").onclick = function () {
   document.getElementById("total").innerHTML = total;
 };
 
-document.getElementById('submit').onclick = function() {
+document.getElementById("submit").onclick = function () {
+  var el = document.getElementById("pasirinkimas");
 
-    var el = document.getElementById('pasirinkimas');
+  var tekstas = "";
 
-    var tekstas = '';
+  switch (el.value) {
+    case "volvo":
+      tekstas = "Volvo geriausias.";
+      break;
 
-    switch(el.value) {
+    case "saab":
+      tekstas = "Keista mašina...";
+      break;
 
-        case 'volvo':
-            tekstas = 'Volvo geriausias.';
-            break;
+    case "opel":
+      tekstas = "Lauželis";
+      break;
 
-        case 'saab':
-            tekstas = 'Keista mašina...';
-            break;
+    case "audi":
+      tekstas = "Kažkas tokio!";
+      break;
 
-        case 'opel':
-            tekstas = 'Lauželis';
-            break;
+    default:
+      tekstas = "Velniop tą mašiną";
+  }
 
-        case 'audi':
-            tekstas = 'Kažkas tokio!';
-            break;
+  alert(tekstas);
+};
 
-        default:
-            tekstas = 'Velniop tą mašiną';
-
-    }
-
-    alert(tekstas);
-	
-}
-
-jQuery(document).ready(function(){
-  
-jQuery('.kitas').addClass('klase');
-jQuery('#kitas').removeClass('klase');
-jQuery('.kitas').click(function(){
-    alert('Naujas paspaudiams');
+jQuery(document).ready(function () {
+  jQuery(".kitas").addClass("klase");
+  jQuery("#kitas").removeClass("klase");
+  jQuery(".kitas").click(function () {
+    alert("Naujas paspaudiams");
+  });
 });
-
-})
 
 //Lentele su EACH
 
-jQuery(document).ready(function(){
-  
-  jQuery('.kitas').addClass('klase');
-  jQuery('#kitas').removeClass('klase');
-  jQuery('.kitas').click(function(){
-      alert('Naujas paspaudiams');
+jQuery(document).ready(function () {
+  jQuery(".kitas").addClass("klase");
+  jQuery("#kitas").removeClass("klase");
+  jQuery(".kitas").click(function () {
+    alert("Naujas paspaudiams");
   });
-  
-  })
-
-
-
-jQuery( ".pasirinkimasjq" ).change(function() {
-  var el = jQuery(this);
-
-  var tekstasjq = '';
-
-  switch(el.val()) {
-
-      case 'volvo':
-          tekstasjq = 'Volvo geriausias.';
-          break;
-
-      case 'saab':
-          tekstasjq = 'Keista mašina...';
-          break;
-
-      case 'opel':
-          tekstasjq = 'Lauželis';
-          break;
-
-      case 'audi':
-          tekstasjq = 'Kažkas tokio!';
-          break;
-
-      default:
-          tekstasjq = 'Velniop tą mašiną';
-
-  }
-  //console.log(tekstasjq);
-  alert(tekstasjq)
-
-  jQuery('.responseMessage').html(tekstasjq);
-  //rodys tik vieną var reikšmę
- //jQuery('.responseMessage').append(tekstasjq);
- //rodys visas parinktas reikšmes, rikiuojant naujausią galę
-  //jQuery('.responseMessage').prepend(tekstasjq);
-  //rodys visas parinktas reikšmes, rikiuojant naujausią priekyje
-  
 });
 
+jQuery(".pasirinkimasjq").change(function () {
+  var el = jQuery(this);
 
+  var tekstasjq = "";
 
-jQuery(document).ready(function() {
-  jQuery(duomenys).each(function(indeksas, reiksme){
-    jQuery(reiksme).each(function(indeksas, reiksme) {
-      console.log(reiksme['adresas']);
+  switch (el.val()) {
+    case "volvo":
+      tekstasjq = "Volvo geriausias.";
+      break;
+
+    case "saab":
+      tekstasjq = "Keista mašina...";
+      break;
+
+    case "opel":
+      tekstasjq = "Lauželis";
+      break;
+
+    case "audi":
+      tekstasjq = "Kažkas tokio!";
+      break;
+
+    default:
+      tekstasjq = "Velniop tą mašiną";
+  }
+  //console.log(tekstasjq);
+  alert(tekstasjq);
+
+  jQuery(".responseMessage").html(tekstasjq);
+  //rodys tik vieną var reikšmę
+  //jQuery('.responseMessage').append(tekstasjq);
+  //rodys visas parinktas reikšmes, rikiuojant naujausią galę
+  //jQuery('.responseMessage').prepend(tekstasjq);
+  //rodys visas parinktas reikšmes, rikiuojant naujausią priekyje
+});
+
+jQuery(document).ready(function () {
+  jQuery(duomenys).each(function (indeksas, reiksme) {
+    jQuery(reiksme).each(function (indeksas, reiksme) {
+      console.log(reiksme["adresas"]);
     });
-    ;
   });
-  
 });
 
 //lentele su jq
 
-const duomenysnew = [
-  {
-    klientas: "Adomavičiaus įmonė",
-    kodas: "1000",
-    data: "2021-07-01",
-    produktas: "Kompiuteris",
-    kaina: "1499",
-    papildoma_informacija: "",
-  },
-  {
-    klientas: "UAB KESKO SENUKAI",
-    kodas: "1001",
-    data: "2021-07-02",
-    produktas: "Televizorius",
-    kaina: "1299",
-    papildoma_informacija: "Reikalingas pristatymas",
-  },
-  {
-    klientas: "UAB SIMPLEA",
-    kodas: "1002",
-    data: "2021-07-03",
-    produktas: "Planšetė",
-    kaina: "499",
-    papildoma_informacija: "",
-  },
-  {
-    klientas: "UAB 5 kontinentai",
-    kodas: "1003",
-    data: "2021-07-04",
-    produktas: "Telefonas",
-    kaina: "700",
-    papildoma_informacija: "",
-  },
-]; 
+// const duomenysnew = [
+//   {
+//     klientas: "Adomavičiaus įmonė",
+//     kodas: "1000",
+//     data: "2021-07-01",
+//     produktas: "Kompiuteris",
+//     kaina: "1499",
+//     papildoma_informacija: "",
+//   },
+//   {
+//     klientas: "UAB KESKO SENUKAI",
+//     kodas: "1001",
+//     data: "2021-07-02",
+//     produktas: "Televizorius",
+//     kaina: "1299",
+//     papildoma_informacija: "Reikalingas pristatymas",
+//   },
+//   {
+//     klientas: "UAB SIMPLEA",
+//     kodas: "1002",
+//     data: "2021-07-03",
+//     produktas: "Planšetė",
+//     kaina: "499",
+//     papildoma_informacija: "",
+//   },
+//   {
+//     klientas: "UAB 5 kontinentai",
+//     kodas: "1003",
+//     data: "2021-07-04",
+//     produktas: "Telefonas",
+//     kaina: "700",
+//     papildoma_informacija: "",
+//   },
+// ];
 
-var tbody = $("#newlentele tbody"),
-reiksmes = ["klientas", "kodas", "data", "produktas", "kaina", "papildoma_informacija"]
-jQuery(duomenysnew).each(function(indeksas, reiksme){
-  var tr = jQuery("<tr>");
-  jQuery(reiksmes).each(function(indeksas, kintamas){
-    jQuery("<td>").html(reiksme[kintamas]).appendTo(tr);
+// var tbody = $("#newlentele tbody"),
+// reiksmes = ["klientas", "kodas", "data", "produktas", "kaina", "papildoma_informacija"]
+// jQuery(duomenysnew).each(function(indeksas, reiksme){
+//   var tr = jQuery("<tr>");
+//   jQuery(reiksmes).each(function(indeksas, kintamas){
+//     jQuery("<td>").html(reiksme[kintamas]).appendTo(tr);
+//   });
+//   tbody.append(tr);
+//   });
+// });
+
+const info = {
+  vardas:"Vardenis ", 
+  pavarde:"Pavardenis ", 
+  data:"2021-01-01."
+};
+
+// Change a property:
+//car.color = "red";
+
+// Add a property:
+vardas = "Vardenis ";
+pavarde = "Pavardenis ";
+data = "2020-01-01.";
+
+
+// Display the property:
+
+//1 uzduotis
+document.getElementById("info").innerHTML = "Аš esu " + vardas + pavarde + "gimęs " + data; 
+
+
+//2 uzduotis
+jQuery(document).ready(function() {
+
+  
+    document.getElementById("skaicius1").innerHTML = Math.round(125.6);
+    document.getElementById("skaicius2").innerHTML = Math.ceil(126.6);
+    document.getElementById("skaicius3").innerHTML = Math.floor(127.6);
   });
-  tbody.append(tr);
-  });
+
+//3 uzduotis
+jQuery(document).ready(function randomSkaicius(min, max) { 
+ 
+min = 100;
+max = 150;
+  document.getElementById("randomskaicius").innerHTML = Math.floor(Math.random() * (max - min + 1) + min);
 });
+
+
+//4 uzduotis
+ jQuery(document).ready(function randomSkaicius(min, max) { 
+ 
+   min = 0;
+   max = 4;
+
+     document.getElementById("1kintamasis").innerHTML = Math.floor(Math.random() * (max - min + 1) + min);
+     document.getElementById("2kintamasis").innerHTML = Math.floor(Math.random() * (max - min + 1) + min);
+
+     let a = document.getElementById("1kintamasis").innerText;
+    let b = document.getElementById("2kintamasis").innerText;
+    console.log(b);
+    document.getElementById("suskaiciuota").innerHTML = Math.floor(a/b);
+   });

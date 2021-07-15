@@ -75,3 +75,6 @@
   tr:nth-child(even) {
     background-color: #dddddd;
   }
+  #info{
+      color: blue;
+  }

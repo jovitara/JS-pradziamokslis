@@ -78,3 +78,8 @@
   #info{
       color: blue;
   }
+  
+  #zvaigzdutes{
+    width: 500px; 
+    word-wrap: break-word;
+  }

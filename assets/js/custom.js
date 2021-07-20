@@ -355,5 +355,84 @@ max = 150;
      let a = document.getElementById("1kintamasis").innerText;
     let b = document.getElementById("2kintamasis").innerText;
     console.log(b);
+
     document.getElementById("suskaiciuota").innerHTML = Math.floor(a/b);
+    
+    if(b == 0)     
+    document.getElementById("suskaiciuota").innerHTML = 'Dalyba negalima';
    });
+
+   //5 užduotis
+   jQuery(document).ready(function randomSkaicius(min, max) { 
+ 
+    min = 0;
+    max = 25;
+ 
+      document.getElementById("1kintamas").innerHTML = Math.floor(Math.random() * (max - min + 1) + min);
+      document.getElementById("2kintamas").innerHTML = Math.floor(Math.random() * (max - min + 1) + min);
+      document.getElementById("3kintamas").innerHTML = Math.floor(Math.random() * (max - min + 1) + min);
+ 
+      let a1 = document.getElementById("1kintamas").innerText;
+     let b1 = document.getElementById("2kintamas").innerText;
+     let c1 = document.getElementById("3kintamas").innerText;
+
+     let mediana = Math.max( 
+      Math.min( a1, b1 ), 
+      Math.min( Math.max( a1, b1), 
+      c1)
+  );
+  document.getElementById("vidurinis").innerHTML = mediana;
+   });
+
+   //07-20 užduotys
+   //1 užduotis 07-20
+
+   jQuery(document).ready(function() {
+   let text = "";
+   let counter = 0;
+
+for (let i = 0; i < 400; i++) {
+
+  if (counter == 50) {
+    text += '<br/>';
+    counter = 0;
+  }
+
+  text += "*";
+  counter++
+}
+
+
+document.getElementById("zvaigzdutes").innerHTML = text;
+
+});
+
+//2 uzduotis 07-20
+
+jQuery(document).ready(function () { 
+  let atsitiktiniai = '';
+  let virs = '';
+ 
+  min = 0;
+  max = 300;
+  for (let i=0; i < 300; i++)
+
+    atsitiktiniai += Math.floor(Math.random() * (max - min + 1) + min) +' ';
+  
+  
+
+
+
+
+document.getElementById("300skaiciu").innerHTML =  atsitiktiniai;
+
+if (i >150) {
+  
+  virs = length;
+};
+
+document.getElementById("virs150").innerHTML = virs.innerText;
+
+
+
+ });

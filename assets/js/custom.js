@@ -407,32 +407,69 @@ document.getElementById("zvaigzdutes").innerHTML = text;
 
 });
 
-//2 uzduotis 07-20
+// 2 uzduotis 07-20
 
 jQuery(document).ready(function () { 
+  let atsitiktinis = 0;
   let atsitiktiniai = '';
-  let virs = '';
+  let virs = 0;
+  
  
   min = 0;
   max = 300;
-  for (let i=0; i < 300; i++)
+  for (let i=0; i < 300; i++){
 
-    atsitiktiniai += Math.floor(Math.random() * (max - min + 1) + min) +' ';
+    atsitiktinis = Math.floor(Math.random() * (max - min + 1) + min);
+  console.log(atsitiktinis);
+
+    if (atsitiktinis >150) {
   
-  
-
-
-
+      virs++;
+    };
+    if (atsitiktinis > 275){
+      atsitiktiniai += '<span style="color:red;">' + atsitiktinis + '</span>';
+    } else{
+      atsitiktiniai += atsitiktinis;
+    }
+    if (i !=299){
+      atsitiktiniai += ' '
+    }
+    
+    
+  }
 
 document.getElementById("300skaiciu").innerHTML =  atsitiktiniai;
 
-if (i >150) {
-  
-  virs = length;
-};
-
-document.getElementById("virs150").innerHTML = virs.innerText;
-
-
+document.getElementById("virs150").innerHTML = 'Skaiciai didesni uz 150:' + virs;
 
  });
+
+//  3 uzduotis 2021-07-20
+
+ jQuery(document).ready(function () { 
+  let x = 0;
+  let xeile = '';
+  let kablelis = ', ';
+  daliklis = 77;
+  
+ 
+
+  for (let i=1; i < 3000; i++){
+
+   x = i/daliklis;
+   if (Number.isInteger(x)){
+     if(i!=daliklis){
+            xeile += kablelis;
+     }
+  
+   xeile += i;
+    }
+    if (i == 3000)
+    xeile += '.';
+  }
+
+document.getElementById("77eile").innerHTML =  xeile;
+
+ });
+
+

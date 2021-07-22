@@ -472,4 +472,59 @@ document.getElementById("77eile").innerHTML =  xeile;
 
  });
 
+jQuery(document).ready(function(){
+  let kvadratas = "";
+
+  for (let i = 0; i < 100; i++) {
+    for (let j = 0; j < 100; j++) {
+      if(i == j || 99-i==j) {
+        kvadratas += '<span style = "color:red";>*</span>';
+      } else {
+        kvadratas += "*";
+      }
+    }
+    kvadratas += "<br>";
+  }
+  document.getElementById("zvaigzdziu_kvadratas").innerHTML =  kvadratas;
+
+});
+
+function randomSkaicius(min, max) { 
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+
+jQuery(document).ready(function(){
+  let benas = 0;
+  let jovita = 0;
+  let final = 222;
+  let string = '';
+  let ended = false;
+
+  for (let i = 0; i < 1000; i++){
+    if (ended)
+        break;
+
+        benas += randomSkaicius(10, 20);
+        jovita += randomSkaicius(5, 25);
+
+        if(benas >= final || jovita >= final){
+          ended = true;
+          if(benas >= final){
+            string = 'Benas , nes surinko' + benas;
+          } else{
+            string = 'Jovita , nes surinko' + jovita;
+          }
+        }
+ 
+
+
+
+document.getElementById("rezultatas").innerHTML = 'Partiją laimėjo'+ string;
+}
+
+});
+
+document.querySelector('.naujos_uzduotys').innerHTML = '<h2>2021 07 22 UŽDUOTYS</h2>';
+document.querySelector('.naujos_uzduotys').innerHTML += '<h2>1 užduotis</h2>';
 

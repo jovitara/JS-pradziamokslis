@@ -525,6 +525,51 @@ document.getElementById("rezultatas").innerHTML = 'Partiją laimėjo'+ string;
 
 });
 
-document.querySelector('.naujos_uzduotys').innerHTML = '<h2>2021 07 22 UŽDUOTYS</h2>';
+
+document.querySelector('.naujos_uzduotys').innerHTML += '<h2>2021 07 26 UŽDUOTYS</h2>';
 document.querySelector('.naujos_uzduotys').innerHTML += '<h2>1 užduotis</h2>';
 
+let aktoriaus_vardas = 'Sandra'
+let aktoriaus_pavarde = 'Bullock'
+
+if(aktoriaus_vardas.length < aktoriaus_pavarde.length){
+      string = 'Sandra - trumpesnis žodis';
+  } else{
+    string = 'Bullock - trumpesnis žodis';
+  }
+
+document.querySelector('.naujos_uzduotys').innerHTML += string;
+
+document.querySelector('.naujos_uzduotys').innerHTML += '<h2>2 užduotis</h2>';
+
+didziosios = aktoriaus_vardas.toUpperCase();
+mazosios = aktoriaus_pavarde.toLowerCase();
+
+
+document.querySelector('.naujos_uzduotys').innerHTML += didziosios +' '+ mazosios;
+
+document.querySelector('.naujos_uzduotys').innerHTML += '<h2>3 užduotis</h2>';
+
+vardo_raide = aktoriaus_vardas.charAt(0);
+pavardes_raide = aktoriaus_pavarde.charAt(0);
+
+let inicialai = vardo_raide + ' ' + pavardes_raide
+
+document.querySelector('.naujos_uzduotys').innerHTML += inicialai;
+
+document.querySelector('.naujos_uzduotys').innerHTML += '<h2>4 užduotis</h2>';
+
+vardo_raides = aktoriaus_vardas.substr(3,5);
+pavardes_raides = aktoriaus_pavarde.substr(4,6);
+
+let junginys = vardo_raides + ' ' + pavardes_raides
+
+document.querySelector('.naujos_uzduotys').innerHTML += junginys;
+
+document.querySelector('.naujos_uzduotys').innerHTML += '<h2>5 užduotis</h2>';
+
+let sakinys = 'Once upon a time in hollywood'
+
+let pakeitimas = (sakinys.replace('o','*'))
+
+document.querySelector('.naujos_uzduotys').innerHTML += pakeitimas;

@@ -570,6 +570,38 @@ document.querySelector('.naujos_uzduotys').innerHTML += '<h2>5 užduotis</h2>';
 
 let sakinys = 'Once upon a time in hollywood'
 
-let pakeitimas = (sakinys.replace('o','*'))
+let pakeitimas = ''
 
-document.querySelector('.naujos_uzduotys').innerHTML += pakeitimas;
+
+  pakeitimas = (sakinys.replaceAll('o','*'));
+  pakeitimas2 = (pakeitimas.replaceAll('O', '*'))
+
+document.querySelector('.naujos_uzduotys').innerHTML += pakeitimas2;
+
+
+document.querySelector('.naujos_uzduotys').innerHTML += '<h2>6 užduotis</h2>';
+
+let visos_o = 'Once upon a time in hollywood'
+
+tik_o = visos_o.match(/o/gi);
+
+document.querySelector('.naujos_uzduotys').innerHTML += tik_o.length;
+
+document.querySelector('.naujos_uzduotys').innerHTML += '<h2>7 užduotis</h2>';
+let stringas1 = 'An American in Paris'
+let stringas2 = "Breakfast at Tiffany's"
+let stringas3 = '2001: A Space Odyssey'
+let stringas4 = "It's a Wonderful Life"
+
+be_a1 = (stringas1.replaceAll(/a/gi, ''))
+be_e1 = (be_a1.replaceAll(/e/gi, ''))
+be_balsiu1 = (be_e1.replaceAll(/i/gi, ''))
+
+be_a2 = (stringas2.replaceAll(/a/gi, ''))
+be_e2 = (be_a2.replaceAll(/e/gi, ''))
+be_y2 = (be_e2.replaceAll(/y/gi, ''))
+be_balsiu2 = (be_y2.replaceAll(/i/gi, ''))
+
+document.querySelector('.naujos_uzduotys').innerHTML += be_balsiu1 + '<br>';
+
+document.querySelector('.naujos_uzduotys').innerHTML += be_balsiu2 + '<br>';

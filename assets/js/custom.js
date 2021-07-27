@@ -602,6 +602,47 @@ be_e2 = (be_a2.replaceAll(/e/gi, ''))
 be_y2 = (be_e2.replaceAll(/y/gi, ''))
 be_balsiu2 = (be_y2.replaceAll(/i/gi, ''))
 
-document.querySelector('.naujos_uzduotys').innerHTML += be_balsiu1 + '<br>';
+document.querySelector('.naujos_uzduotys').innerHTML += be_balsiu1 + '<br/>';
 
-document.querySelector('.naujos_uzduotys').innerHTML += be_balsiu2 + '<br>';
+document.querySelector('.naujos_uzduotys').innerHTML += be_balsiu2 + '<br/>';
+
+document.querySelector('.naujos_uzduotys').innerHTML += stringas3.replace(/a|e|i|y|o|u/gi, '') + '<br/>';
+
+document.querySelector('.naujos_uzduotys').innerHTML += stringas4.replace(/a|e|i|y|o|u/gi, '') + '<br/>';
+
+
+document.querySelector('.naujos_uzduotys').innerHTML += '<h2>8 užduotis</h2>';
+
+function zodziu_skaiciavimas(sakinys, ilgis) {
+
+  let frazes_masyvas = sakinys.split(' ');
+  let zodziu_counteris = 0;
+
+  for (let i = 0; i < frazes_masyvas.length; i++) {
+      
+      if(frazes_masyvas[i].length <= ilgis)
+          zodziu_counteris++;
+  }
+
+  return zodziu_counteris;
+}
+
+let fraze = 'Don\'t Be a Menace to South Central While Drinking Your Juice in the Hood';
+let fraze2 = 'Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale';
+
+let x = zodziu_skaiciavimas(fraze, 5);
+
+document.querySelector('.naujos_uzduotys').innerHTML += x + '<br />';
+document.querySelector('.naujos_uzduotys').innerHTML += zodziu_skaiciavimas(fraze2, 5) + '<br />';
+
+document.querySelector('.naujos_uzduotys').innerHTML += '<h2>Papildoma užduotis</h2>';
+raides = 'abcdefghijklmnopqrstuvwxyz';
+let randomraides = '';
+
+for ( var i = 0; i < 3; i++ ) {
+
+    randomraides += raides.charAt( Math.floor( Math.random() * raides.length) );
+
+}
+
+document.querySelector('.naujos_uzduotys').innerHTML += randomraides;

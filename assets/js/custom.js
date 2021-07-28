@@ -646,3 +646,53 @@ for ( var i = 0; i < 3; i++ ) {
 }
 
 document.querySelector('.naujos_uzduotys').innerHTML += randomraides;
+
+function headingas(uzduotis, tema = false, tevinis ='.kitos_uzduotys'){
+
+  let child = document.querySelector(tevinis);
+
+  if (tema) {
+    let klase = tema.toLowerCase();
+    document.querySelector(tevinis).innerHTML += '<div class="' + klase + '"></div>';
+
+    child = document.querySelector('.' + klase);
+
+    child.innerHTML += '<h1>' + tema + '</h1>';
+  }
+  child.innerHTML += '<h3>' + uzduotis + '</h3>';
+}
+
+
+headingas('Pirma užduotis', 'Funkcijos_2021-07-28')
+
+function didesnis_stringas(pirmas_sakinys, antras_sakinys){
+
+     
+      if(pirmas_sakinys.length > antras_sakinys.length) {
+        return 'Pirmas sakinys ilgesnis';
+      } 
+      if (pirmas_sakinys.length < antras_sakinys.length) {
+      return 'Antras sakinys ilgesnis';
+    }
+    if (pirmas_sakinys.length == antras_sakinys.length) {
+      return 'Abu sakiniai lygūs';
+    }
+
+}
+
+document.querySelector('.kitos_uzduotys').innerHTML += didesnis_stringas('Keturi metu laikai', 'Suniui penkta koja') + '<br />';
+
+
+
+headingas('Antra užduotis')
+
+let ketimui = 'Jūs būsite x ir gyvensite x. Susituoksite su x bei turėsite šunį vardu x, o mirsite sulaukę x metų.'
+
+function pakeisti(x,y,z){
+ for ( var i = 0; i <= 3; i++ ){
+gautas_paketimas = ketimui.replaceAll()
+ }
+}
+document.querySelector('.kitos_uzduotys').innerHTML += pakeisti('20', 'Tomas', '*') + '<br />';
+
+

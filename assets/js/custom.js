@@ -688,11 +688,29 @@ headingas('Antra užduotis')
 
 let ketimui = 'Jūs būsite x ir gyvensite x. Susituoksite su x bei turėsite šunį vardu x, o mirsite sulaukę x metų.'
 
-function pakeisti(x,y,z){
- for ( var i = 0; i <= 3; i++ ){
-gautas_paketimas = ketimui.replaceAll()
+function pakeisti(a,b,c,d,e){
+
+return 'Jūs būsite ' + a + ' ir gyvensite ' + b + '. Susituoksite su ' + c + ' bei turėsite šunį vardu ' + d + ', o mirsite sulaukę ' + e + ' metų.'
+
  }
+
+document.querySelector('.kitos_uzduotys').innerHTML += pakeisti ('jauna', 'Klaipėdoje', 'mokslininku', 'Turbo', '77') + '<br />';
+
+
+headingas('Trečia užduotis')
+
+
+
+headingas('Pirma užduotis', 'Masyvai_2021-07-29')
+
+let masyvas = [];
+let skaiciai_kitas = 0;
+
+
+
+for(let i = 0; i < 30; i++){
+skaiciai_kitas = randomSkaicius(5, 25);
+masyvas.push(i);
+  
 }
-document.querySelector('.kitos_uzduotys').innerHTML += pakeisti('20', 'Tomas', '*') + '<br />';
-
-
+document.querySelector('.kitos_uzduotys').innerHTML += masyvas;

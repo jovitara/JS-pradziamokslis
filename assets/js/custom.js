@@ -105,7 +105,7 @@ duomenys[0]["miestas"] = "Kazlų Rūda";
 duomenys[1]["miestas"] = "Ariogala";
 duomenys[2]["miestas"] = "Marijampolė";
 
-console.log(duomenys);
+
 
 let html = "";
 let ending = "";
@@ -251,7 +251,7 @@ jQuery(".pasirinkimasjq").change(function () {
 jQuery(document).ready(function () {
   jQuery(duomenys).each(function (indeksas, reiksme) {
     jQuery(reiksme).each(function (indeksas, reiksme) {
-      console.log(reiksme["adresas"]);
+     
     });
   });
 });
@@ -354,8 +354,7 @@ max = 150;
 
      let a = document.getElementById("1kintamasis").innerText;
     let b = document.getElementById("2kintamasis").innerText;
-    console.log(b);
-
+    
     document.getElementById("suskaiciuota").innerHTML = Math.floor(a/b);
     
     if(b == 0)     
@@ -420,7 +419,7 @@ jQuery(document).ready(function () {
   for (let i=0; i < 300; i++){
 
     atsitiktinis = Math.floor(Math.random() * (max - min + 1) + min);
-  console.log(atsitiktinis);
+  // console.log(atsitiktinis);
 
     if (atsitiktinis >150) {
   
@@ -703,14 +702,212 @@ headingas('Trečia užduotis')
 
 headingas('Pirma užduotis', 'Masyvai_2021-07-29')
 
-let masyvas = [];
-let skaiciai_kitas = 0;
-
+let naujas_masyvas = [];
+let daugiau10 = 0;
+let didziausias_skaicius = 0;
+let didziausias_indeksas = 0;
+let poriniai_indeksai = 0;
+let naujas_masyvas_pridetas = [];
+let porinis_masyvas = [];
+let neporinis_masyvas = [];
 
 
 for(let i = 0; i < 30; i++){
-skaiciai_kitas = randomSkaicius(5, 25);
-masyvas.push(i);
-  
+
+let masyvo_skaicius = randomSkaicius(5, 25);
+
+naujas_masyvas.push(masyvo_skaicius);
+
+document.querySelector('.kitos_uzduotys').innerHTML += masyvo_skaicius + '<br/>';
+
+if(masyvo_skaicius >10){
+
+  daugiau10++;
 }
-document.querySelector('.kitos_uzduotys').innerHTML += masyvas;
+
+  if (masyvo_skaicius > didziausias_skaicius){
+    didziausias_skaicius = masyvo_skaicius;
+    didziausias_indeksas = i;
+  }
+
+    if (i%2 == 0){
+      poriniai_indeksai += naujas_masyvas[i];
+    
+  }
+ 
+    
+}
+headingas('Antra užduotis a')
+
+
+document.querySelector('.kitos_uzduotys').innerHTML +='Kiek skaiciu >10: ' + daugiau10 + '<br/>';
+
+headingas('Antra užduotis b')
+
+
+document.querySelector('.kitos_uzduotys').innerHTML += 'Didziausias skaicius ' + didziausias_skaicius + ' didziausias indeksas ' + didziausias_indeksas + '<br/>';
+
+headingas('Antra užduotis c')
+
+document.querySelector('.kitos_uzduotys').innerHTML += 'Poriniu indeksu suma: ' + poriniai_indeksai + '<br/>';
+
+headingas('Antra užduotis d-e')
+
+for(let i = 0; i < naujas_masyvas.length; i++){
+
+  naujas_masyvas[i] = (naujas_masyvas[i] - i);
+  
+
+  document.querySelector('.kitos_uzduotys').innerHTML += naujas_masyvas[i] + '<br/>';
+   
+}
+
+for(let i = 0; i < 10; i++){
+
+  let masyvo_skaicius = randomSkaicius(5, 25);
+  
+  naujas_masyvas.push(masyvo_skaicius);
+ 
+  
+  document.querySelector('.kitos_uzduotys').innerHTML += masyvo_skaicius + '<br/>';
+ 
+}
+
+headingas('Antra užduotis f')
+
+let pirmasis_naujas_masyvas = [];
+let antrasis_naujas_masyvas = [];
+let pirma_reiksme_mazesne_uz_10 = 0;
+
+
+naujas_masyvas.forEach(function(reiksme, indeksas) {
+    if(indeksas%2 == 0) {
+        pirmasis_naujas_masyvas.push(reiksme);
+    } else {
+        antrasis_naujas_masyvas.push(reiksme);
+    }
+
+    if(reiksme > 10 && pirma_reiksme_mazesne_uz_10 == 0) {
+        pirma_reiksme_mazesne_uz_10 = indeksas;
+    }
+});
+
+document.querySelector('.kitos_uzduotys').innerHTMLL += 'Pirmas Masyvas <br />' + pirmasis_naujas_masyvas + '<br />';
+document.querySelector('.kitos_uzduotys').innerHTML += 'Antrasis Masyvas <br />' + antrasis_naujas_masyvas;
+
+
+document.querySelector('.kitos_uzduotys').innerHTML += '<h3>Reiksme mazesnes uz 10 indeksas </h3> ' + pirma_reiksme_mazesne_uz_10;
+
+headingas('Pirma užduotis', 'Masyvai_2021-08-02')
+
+let raidziu_sarasas = 'ABCD';
+let randomraides2 = [];
+
+let Araide = 0;
+let Braide = 0;
+let Craide = 0;
+let Draide = 0;
+
+
+
+for ( var i = 0; i < 20; i++ ) {
+
+    randomraides2.push (raidziu_sarasas.charAt( Math.floor( Math.random() * raidziu_sarasas.length) ));
+   
+    if(randomraides2[i] == 'A'){
+
+      Araide++;
+    }
+    if(randomraides2[i] == 'B'){
+
+      Braide++;
+    }
+    if(randomraides2[i] == 'C'){
+
+      Craide++;
+    }
+    if(randomraides2[i] == 'D'){
+
+      Draide++;
+    }
+    
+}
+
+document.querySelector('.kitos_uzduotys').innerHTML += randomraides2 + '<br/>';
+   
+  
+document.querySelector('.kitos_uzduotys').innerHTML += 'A raidziu yra ' + Araide + '<br/>';
+document.querySelector('.kitos_uzduotys').innerHTML += 'B raidziu yra ' + Braide + '<br/>';
+document.querySelector('.kitos_uzduotys').innerHTML += 'C raidziu yra ' + Craide + '<br/>';
+document.querySelector('.kitos_uzduotys').innerHTML += 'D raidziu yra ' + Draide + '<br/>';
+
+headingas('Antra užduotis')
+
+
+randomraides2.sort();
+
+document.querySelector(".kitos_uzduotys").innerHTML += randomraides2;
+
+headingas('Trecia užduotis')
+let masyvas_pirmas = [];
+let masyvas_antras = [];
+
+let skaicius_0802 = 0;
+let skaicius_0803 = 0;
+
+while(masyvas_pirmas.length < 100){
+  skaicius_0802 = randomSkaicius(100, 999);
+  skaicius_0803 = randomSkaicius(100, 999);
+
+  if(!masyvas_pirmas.includes(skaicius_0802))
+  masyvas_pirmas.push(skaicius_0802);
+
+  if(!masyvas_antras.includes(skaicius_0803))
+  masyvas_antras.push(skaicius_0803);
+
+
+}
+
+document.querySelector(".kitos_uzduotys").innerHTML +='Pirmas masyvas ' + '<br/>' + masyvas_pirmas + '<br/>';
+document.querySelector(".kitos_uzduotys").innerHTML += 'Antras masyvas ' + '<br/>' + masyvas_antras + '<br/>';
+
+headingas('Ketvirta užduotis')
+
+let masyvas_trecias = [];
+
+for(let i = 0; i < masyvas_pirmas.length; i++ ){
+  if(!masyvas_antras.includes(masyvas_pirmas[i])){
+    masyvas_trecias.push(masyvas_pirmas[i])
+  }
+}
+
+
+document.querySelector(".kitos_uzduotys").innerHTML +='Masyvas iš pirmo masyvo reikšmių ' + '<br/>' + masyvas_trecias + '<br/>';
+
+headingas('Penkta užduotis')
+
+let masyvas_ketvirtas = [];
+
+for(let i = 0; i < masyvas_pirmas.length; i++ ){
+  if(masyvas_antras.includes(masyvas_pirmas[i])){
+    masyvas_ketvirtas.push(masyvas_pirmas[i])
+  }
+}
+
+document.querySelector(".kitos_uzduotys").innerHTML +='Masyvas iš  pirmo ir antro masyvo reikšmių ' + '<br/>' + masyvas_ketvirtas + '<br/>';
+
+headingas('Šešta užduotis')
+
+let masyvas_penktas = [];
+masyvas_penktas.push(randomSkaicius(5,25));
+masyvas_penktas.push(randomSkaicius(5,25));
+
+for(let i = 2; i < 10; i++ ){
+
+  masyvas_penktas.push(
+    masyvas_penktas[i-2] + masyvas_penktas[i-1]
+  );
+}
+
+document.querySelector(".kitos_uzduotys").innerHTML +='Penktas masyvas' + '<br/>' + masyvas_penktas + '<br/>';
+

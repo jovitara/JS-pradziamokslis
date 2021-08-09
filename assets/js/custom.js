@@ -857,14 +857,18 @@ let skaicius_0803 = 0;
 
 while(masyvas_pirmas.length < 100){
   skaicius_0802 = randomSkaicius(100, 999);
-  skaicius_0803 = randomSkaicius(100, 999);
-
+  
   if(!masyvas_pirmas.includes(skaicius_0802))
   masyvas_pirmas.push(skaicius_0802);
 
+}
+while(masyvas_antras.length < 100){
+  
+  skaicius_0803 = randomSkaicius(100, 999);
+
+
   if(!masyvas_antras.includes(skaicius_0803))
   masyvas_antras.push(skaicius_0803);
-
 
 }
 
@@ -911,3 +915,132 @@ for(let i = 2; i < 10; i++ ){
 
 document.querySelector(".kitos_uzduotys").innerHTML +='Penktas masyvas' + '<br/>' + masyvas_penktas + '<br/>';
 
+
+headingas('Pirma užduotis', 'Objektai_2021-08-03')
+
+
+
+let objekto_masyvas = {};
+
+for(let i = 0; i < masyvas_pirmas.length; i++){
+  objekto_masyvas[masyvas_pirmas[i]] = masyvas_antras[i];
+}
+
+
+for(let indeks in objekto_masyvas){
+  document.querySelector(".kitos_uzduotys").innerHTML +='indeksas = ' + indeks + ' reiksme = ' + objekto_masyvas [indeks] + '<br/>';
+}
+
+headingas('Antra užduotis')
+
+
+function randomString(length) {
+
+  let randomraides = '';
+  let raides = 'abcdefghijklmnopqrstuvwxyz';
+
+  for ( let i = 0; i < length; i++ ) {
+
+      randomraides += raides.charAt( Math.floor( Math.random() * raides.length) );
+
+  }
+
+  return randomraides;
+
+}
+
+let OBJEKTAS_1 = {};
+
+for ( let i = 0; i < 10; i++ ) {
+
+  let randomraides = randomString(3);
+  let randomskaicius = randomSkaicius(55, 5555);
+
+  OBJEKTAS_1[randomraides] = randomskaicius;
+  document.querySelector(".kitos_uzduotys").innerHTML +='indeksas = ' + randomraides + ' reiksme = ' + OBJEKTAS_1[randomraides]+ '<br/>';
+}
+
+
+  
+headingas('Trecia užduotis')
+
+
+let masyvas_0804 = [];
+
+
+
+for(let i = 0; i < 10; i++){
+
+  
+ 
+
+let masyvo_skaicius_0804 = randomSkaicius(5, 25);
+
+masyvas_0804.push(masyvo_skaicius_0804);
+
+
+document.querySelector('.kitos_uzduotys').innerHTML += masyvo_skaicius_0804 + '<br/>';
+};
+
+
+console.log(masyvas_0804)
+for(let i=0; i < masyvas_0804.length; i++){
+  if (i%2==0){
+  masyvas_0804.splice(i, 1, '')}
+ else {
+  document.querySelector('.kitos_uzduotys').innerHTML += 'pratrintas masyvas ' + masyvas_0804[i] + '<br/>';
+ }
+
+
+}
+
+
+el_selector = document.querySelector('.kitos_uzduotys');
+el_selector.innerHTML += '<h1>2021-08-05</h1>';
+
+el_selector.innerHTML += '<h2>Paskutinė lentelė</h2>';
+
+el_selector.innerHTML += '<table id="paskutine_lentele" class="lentele">' +
+                            '<thead>' + 
+                            '<th>Miestas</th>' +
+                            '<th>Adresas</th>' +
+                            '<th>Prekių likutis</th>' +
+                            '</thead>' + 
+                            '<tbody>' + 
+                            '</tbody>' +
+                         '</table>';
+
+
+let paskutine_lentele = document.querySelector('#paskutine_lentele > tbody');
+
+//Multidimentional array
+let masyvas0805 = [
+    {
+        miestas: 'Kaunas',
+        adresas: 'Jonavos 57',
+        likutis: 4
+    },
+    {
+        miestas: 'Vilnius',
+        adresas: 'Gelezinio 57',
+        likutis: 4
+    }
+];
+
+for(let i = 0; i < 500; i++) {
+
+    let objektas = {
+        miestas: randomString(15),
+        adresas: randomString(25),
+        likutis: randomSkaicius(1, 129)
+    }
+
+    masyvas0805.push(objektas);
+} 
+
+for(let i = 0; i < masyvas0805.length; i++) {
+    paskutine_lentele.innerHTML += '<tr><td>' + masyvas0805[i]['miestas'] + '</td>' +
+                                    '<td>' + masyvas0805[i]['adresas'] + '</td>' +
+                                    '<td>' + masyvas0805[i]['likutis'] + '</td>';
+}
+console.log(masyvas0805);
